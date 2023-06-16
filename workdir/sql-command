@@ -1,0 +1,55 @@
+List of SQL Commands
+SELECT
+SELECT is probably the most commonly-used SQL statement. You'll use it pretty much every time you query data with SQL. It allows you to define what data you want your query to return.
+
+For example, in the code below, we’re selecting a column called name from a table called customers.
+
+SELECT name
+FROM customers;
+SELECT *
+SELECT used with an asterisk (*) will return all of the columns in the table we're querying.
+
+SELECT * FROM customers;
+SELECT DISTINCT
+SELECT DISTINCT only returns data that is distinct — in other words, if there are duplicate records, it will return only one copy of each.
+
+The code below would return only rows with a unique name from the customers table.
+
+SELECT DISTINCT name
+FROM customers;
+SELECT INTO
+SELECT INTO copies the specified data from one table into another.
+
+SELECT * INTO customers
+FROM customers_backup;
+SELECT TOP
+SELECT TOP only returns the top x number or percent from a table.
+
+The code below would return the top 50 results from the customers table:
+
+SELECT TOP 50 * FROM customers;
+The code below would return the top 50 percent of the customers table:
+
+SELECT TOP 50 PERCENT * FROM customers;
+AS
+AS renames a column or table with an alias that we can choose. For example, in the code below, we’re renaming the name column as first_name:
+
+SELECT name AS first_name
+FROM customers;
+FROM
+FROM specifies the table we're pulling our data from:
+
+SELECT name
+FROM customers;
+WHERE
+WHERE filters your query to only return results that match a set condition. We can use this together with conditional operators like =, >, <, >=, <=, etc.
+
+SELECT name
+FROM customers
+WHERE name = ‘Bob’;
+AND
+AND combines two or more conditions in a single query. All of the conditions must be met for the result to be returned.
+
+SELECT name
+FROM customers
+WHERE name = ‘Bob’ AND age = 55;
